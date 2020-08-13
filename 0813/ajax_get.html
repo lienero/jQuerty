@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body style="text-align: center;">
+    <h1>Loading a web page into a DIV</h1>
+    <div id="info">This sentence will be replaced</div>
+
+    <script>
+      /*jQuery.get(  url [, data] [, success(data, textStatus, jqXHR)] [, dataType] )
+        url : 요청 URL (클라이언트가 HTTP 요청을 보낼 서버의 주소)
+        data : 요청과 함께 서버에 보내는 string 또는 map
+        success(data,textStatus,jqXHR) : 요청이 성공일때 실행되는 callback 함수
+        dataType : 서버에서 내려온 data 형식. ( default : xml,json,script,text,html ) */
+      $.get("urlget.php?url=www.naver.com", function (data) {
+        $("#info").html(data);
+      });
+    </script>
+  </body>
+</html>
