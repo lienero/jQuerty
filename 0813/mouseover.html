@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="test">Pass the mouse over me</h2>
+    <script>
+      //mouseenter() : 영역에 마우스가 들어갔을 때 반응하는 이벤트
+      /* mouseenter 자바스크립트 이벤트는 Explorer전용 이벤트입니다. 
+      이 이벤트의 일반적인 사용성 때문에 jQuery 에서는 브라우져를 고려하지 않고 작동이 되도록 구성하였습니다. 
+      이 이벤트는 요소에 마우스 포인터가 진입하면 발생하게 됩니다. 
+      어떤 HTML 요소라도 이 이벤트를 받을 수 있습니다. */
+      $("#test").mouseenter(function () {
+        $(this).html("멈추세요");
+      });
+      //mouseleave(): 영역에 마우스가 빠져나갈 때 반응하는 이벤트
+      $("#test").mouseleave(function () {
+        $(this).html("어디감미까");
+      });
+
+      /*
+      //mouseover() : 마우스가 영역 위에 있을 때 반응하는 이벤트
+      $("#test").mouseover(function () {
+        $(this).html("어디감미까");
+      });
+      //mouseout() : 마우스가 영역에서 벗어날 떄 반응하는 이벤트
+      $("#test").mouseout(function () {
+        $(this).html("어디감미까");
+      });
+      //hover() : 마우스를 올렸을 때 반응하는 이벤트
+      $("#test").hover(function () {
+        $(this).html("어디감미까");}
+        function () {
+        $(this).html("어디감미까"););
+        */
+    </script>
+  </body>
+</html>

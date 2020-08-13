@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jquery-1.11.1.min.js"></script>
+    <style>
+      #pad {
+        background: #def;
+        border: 1px solid #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <canvas>태그는 자바스크립트를 통해 다양한 그림을 그릴 수 있는 공간을 제공해준다. -->
+    <canvas id="pad" width="480" height="320"></canvas>
+    <script>
+      canvas = $("#pad")[0];
+      // getContext() 함수는 드로잉에 필요한 속성과 함수를 가진 객체를 생성한다.
+      context = canvas.getContext("2d");
+      pendown = false;
+
+      //mousemove() : 영역위에서 마우스가 움직일 때 반응하는 이벤트
+      $("#pad").mousemove(function (event) {
+        //pageX란 페이지의 왼쪽 구석에서부터 마우스 위치의 X값을 구하는 함수이다.
+        //pageY란 페이지위 위쪽 구석에서부터 마우스 위치의 Y값을 구하는 함수이다.
+        var xpos = event.pageX - canvas.offsetLeft;
+        var ypos = event.pageY - canvas.offsetTop;
+        //lintTo() : 끝나는 좌표로 어디까지 그리는지 나타냅니다.
+        if (pendown) context.lineTo(xpos, ypos);
+        //moveTo() : 시작좌표로 시작점을 나타낸다
+        else context.moveTo(xpos, ypos);
+        //stroke() : 현재까지 설정한 그림들을 그리는 함수
+        context.stroke();
+      });
+      //mousedown(): 마우스 버튼을 누를 때 실행
+      $("#pad").mousedown(function () {
+        pendown = true;
+      });
+      //mouseup(): 마우스 버튼을 뗄 때 실행
+      $("#pad").mouseup(function () {
+        pendown = false;
+      });
+    </script>
+  </body>
+</html>

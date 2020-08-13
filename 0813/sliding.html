@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="slideup">sliedUp</button>
+    <button id="slidedown">sliedDown</button>
+    <button id="slidetoggle">sliedToggle</button>
+    <div id="para" style="background: #def;">
+      <h2>사랑해요 오현우</h2>
+      <p>사실 아니에요 오현우</p>
+    </div>
+    <script>
+      //slideup() : 선택한 요소의 CSS height 속성값을 높여가며 사라지게 한다.
+      $("#slideup").click(function () {
+        $("#para").slideUp("slow");
+      });
+      //slidedown() :선택한 요소의 CSS height 속성값을 낮춰가며 나타나게 한다.
+      $("#slidedown").click(function () {
+        $("#para").slideDown("slow");
+      });
+      //slidetoggle() :선택한 요소에 .slideUp() 메소드와 .slideDown() 메소드를 번갈아가며 적용한다.
+      $("#slidetoggle").click(function () {
+        $("#para").slideToggle("slow");
+      });
+    </script>
+  </body>
+</html>

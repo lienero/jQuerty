@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Press some keys</h2>
+    <div id="result"></div>
+    <script>
+      //keypress() : 키보드를 눌렀을 때 실행 키보드를 누르고 있을 때 계속 실행됨
+      //event 란 클릭, 마우스이동, 타이핑, 페이지 로딩 등의 Action 을 의미한다.
+      $(document).keypress(function (event) {
+        //event.which는 어떤 키를 눌렀는지, 마우스를 눌렀는지 알수 있게 해준다. 키보드의 경우 해당하는 고유번호를 출력한다.
+        //String.fromCharCode([아스키코드값]); : 아스키코드를 문자열로 반환
+        key = String.fromCharCode(event.which);
+        if (
+          (key >= "a" && key <= "z") ||
+          (key >= "A" && key <= "z") ||
+          (key >= "0" && key <= "9")
+        ) {
+          $("#result").html("You pressed:" + key);
+          // preventDefault() : html 요소 자체가 가지고 있는 기본 이벤트의 실행을 막아준다
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>

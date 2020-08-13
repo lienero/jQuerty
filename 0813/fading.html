@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./jquery-1.11.1.min.js"></script>
+    <title>특수효과 - 페이드 효과</title>
+  </head>
+  <body>
+    <button id="fadeout">fadeOut</button>
+    <button id="fadein">fadeIn</button>
+    <button id="fadetoggle">fadeToggle</button>
+    <button id="fadeto">fadeTo</button>
+    <p id="text">Click the buttons above</p>
+    <script>
+      // fadeIn() : 선택한 요소의 CSS opacity 속성값을 높여가며 요소를 사라지게 함.
+      $("#fadeout").click(function () {
+        $("#text").fadeOut("slow");
+      });
+      // fadeOut() :선택한 요소의 CSS opacity(투명도) 속성값을 높여가며 요소를 나타지게 함.
+      $("#fadein").click(function () {
+        $("#text").fadeIn("slow");
+      });
+      // fadeToggle() :선택한 요소에 fadeIn() 메소드와 fadeOut() 메소드를 번갈아가며 적용함.
+      $("#fadetoggle").click(function () {
+        $("#text").fadeToggle("slow");
+      });
+      // fadeTo() :페이드 효과에서 사용하는 opacity 속성값을 직접 설정함.
+      $("#fadeto").click(function () {
+        // opacity 속성값은 0.5로 설정
+        $("#text").fadeTo("slow", 0.5);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>jQuery Events</title>
+    <script src="jquery-1.11.1.min.js"></script>
+  </head>
+  <body>
+    <button id="clickme">click Me</button>
+    <p id="result">I am a paragraph</p>
+    <script>
+      // click()메소드는 해당 요소를 눌렀다가 떼는 순간 이벤트가 동작
+      $("#clickme").click(function () {
+        $("#result").html("You clicked the button!");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Event: click & dbclick</title>
+    <script src="jquery-1.11.1.min.js"></script>
+  </head>
+  <body>
+    <h2>Click and double click the buttons</h2>
+    <button class="myclass">Button 1</button>
+    <button class="myclass">Button 2</button>
+    <button class="myclass">Button 3</button>
+    <button class="myclass">Button 4</button>
+    <button class="myclass">Button 5</button>
+    <script>
+      // click()메소드는 해당 요소를 눌렀다가 떼는 순간 이벤트가 동작
+      $(".myclass").click(function () {
+        $(this).slideUp();
+      });
+      // dbclick()메소드는 해당 요소를 두번 클릭했을 때 이벤트가 동작
+      $(".myclass").dblclick(function () {
+        $(this).hide();
+      });
+    </script>
+  </body>
+</html>
